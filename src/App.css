@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
+* {
+  --color-light: #f4f1de;
+  --color-orange: #e07a5f;
+  --color-blue: #3d405b;
+  --color-green: #81b29a;
+  --color-yellow: #f2cc8f;
+  box-sizing: border-box;
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Secular One', sans-serif;
+  color: var(--color-blue);
+}
+
+form .action {
+  display: flex;
+  justify-content: center;
+}
+
+.form-control {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas: 'left right';
+  width: 30vw;
+}
+input[type='text'],
+input[type='number'],
+select,
+textarea {
+  background-color: var(--color-light);
+  border: none;
+  border-radius: 20px;
+  height: 2rem;
+  width: 90%;
+  padding-left: 10px;
+  grid-area: right;
+  justify-self: left;
+  font-family: 'Secular One', sans-serif;
+  color: var(--color-blue);
+}
+
+input[type='text']:focus,
+input[type='number']:focus,
+select:focus,
+textarea:focus {
+  border: none;
+  box-shadow: 0 0 3px 2px var(--color-green);
+  outline: none;
+}
+
+label {
+  grid-area: left;
+  justify-self: center;
+  align-self: center;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a.button,
+button {
+  margin: 10px;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  width: 20vw;
+  height: 2rem;
+  background-color: var(--color-blue);
+  color: var(--color-light);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+a.button.warning,
+button.warning {
+  background-color: var(--color-orange);
+}
+
+.query-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  width: 80vw;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 0 3px 2px var(--color-blue);
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  margin-top: 20px;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 1s linear infinite;
+}
+.loader::before,
+.loader::after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  border: 5px solid var(--color-green);
+  animation: prixClipFix 2s linear infinite;
+}
+.loader::after {
+  inset: 8px;
+  transform: rotate3d(90, 90, 0, 180deg);
+  border-color: var(--color-blue);
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes prixClipFix {
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
+  }
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
+  }
+  75%,
+  100% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
+  }
+}
