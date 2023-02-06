@@ -15,9 +15,6 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [zip, setZip] = useState('');
   const [search, setSearch] = useState('');
-  console.log('businesses', businesses);
-
-  // TODO -- add state for zip / search and add event listeners to the inputs
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,8 +24,6 @@ function App() {
     };
     fetchData();
   }, []);
-
-  // TODO -- add event for button click to handle calling fetchBusinesses with zip / search
 
   return (
     <ThemeProvider theme={theme}>
