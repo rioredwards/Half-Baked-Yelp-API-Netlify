@@ -14,6 +14,7 @@
   align-items: center;
   font-family: 'Secular One', sans-serif;
   color: var(--color-blue);
+  min-height: 100vh;
 }
 
 form .action {
@@ -26,8 +27,11 @@ form .action {
   display: grid;
   grid-template-columns: 1fr 3fr;
   grid-template-areas: 'left right';
+  align-items: center;
   width: 30vw;
+  height: 4rem;
 }
+
 input[type='text'],
 input[type='number'],
 select,
@@ -88,12 +92,15 @@ button.warning {
 
 .query-form {
   margin-top: 20px;
+  margin-bottom: 20px;
+
   display: flex;
   flex-direction: row;
   width: 80vw;
   align-items: center;
   border-radius: 10px;
   box-shadow: 0 0 3px 2px var(--color-blue);
+  padding: 0 1rem;
 }
 
 .loader {
